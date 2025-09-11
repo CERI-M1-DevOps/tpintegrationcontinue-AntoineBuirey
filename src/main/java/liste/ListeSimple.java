@@ -4,7 +4,7 @@ package liste;
     private long size;
     Noeud tete;
 
-     long getSize() {
+    public long getSize() {
         return size;
     }
 
@@ -13,7 +13,7 @@ package liste;
         size++;
     }
 
-     void modifiePremier(Object element, Object nouvelleValeur) {
+    public void modifiePremier(Object element, Object nouvelleValeur) {
         Noeud courant = tete;
         while (courant != null && courant.getElement() != element)
             courant = courant.getSuivant();
@@ -21,7 +21,7 @@ package liste;
             courant.setElement(nouvelleValeur);
     }
 
-     void modifieTous(Object element, Object nouvelleValeur) {
+    public void modifieTous(Object element, Object nouvelleValeur) {
         Noeud courant = tete;
         while (courant != null) {
             if (courant.getElement() == element)
@@ -30,7 +30,7 @@ package liste;
         }
     }
 
-     String toString() {
+    public String toString() {
         StringBuilder sb = new StringBuilder("ListeSimple(");
         Noeud n = tete;
         while (n != null) {
@@ -43,7 +43,7 @@ package liste;
         return sb.toString();
     }
 
-     void supprimePremier(Object element) {
+    public void supprimePremier(Object element) {
         if (tete != null) {
             if (tete.getElement() == element) {
                 tete = tete.getSuivant();
@@ -63,11 +63,11 @@ package liste;
         }
     }
 
-     void supprimeTous(int element) {
+    public void supprimeTous(int element) {
        tete = supprimeTousRecurs(element, tete);
     }
 
-     Noeud supprimeTousRecurs(Object element, Noeud tete) {
+    public Noeud supprimeTousRecurs(Object element, Noeud tete) {
         if (tete != null) {
             Noeud suiteListe = supprimeTousRecurs(element, tete.getSuivant());
             if (tete.getElement() == element) {
@@ -80,7 +80,7 @@ package liste;
         } else return null;
     }
 
-     Noeud getAvantDernier() {
+    public Noeud getAvantDernier() {
         if (tete == null || tete.getSuivant() == null)
             return null;
         else {
@@ -94,7 +94,7 @@ package liste;
         }
     }
 
-     void inverser() {
+    public void inverser() {
         Noeud precedent = null;
         Noeud courant = tete;
         while (courant != null) {
@@ -106,7 +106,7 @@ package liste;
         tete = precedent;
     }
 
-     Noeud getPrecedent(Noeud r) {
+    public Noeud getPrecedent(Noeud r) {
     // la liste n'est pas vide puisqu'on transmet un Node de la liste et le Node existe obligatoirement
         Noeud precedent = tete;
         Noeud courant = precedent.getSuivant();
@@ -117,7 +117,7 @@ package liste;
         return precedent;
     }
 
-     void echanger(Noeud r1, Noeud r2) {
+    public void echanger(Noeud r1, Noeud r2) {
         if (r1 == r2)
             return;
         Noeud precedentR1, precedentR2;
