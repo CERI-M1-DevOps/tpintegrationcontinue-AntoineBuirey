@@ -1,31 +1,31 @@
 package liste;
 
- class Noeud {
+public class Noeud {
     private Object element;
     private Noeud suivant;
 
-     Noeud(int e, Noeud suivant) {
+    public Noeud(int e, Noeud suivant) {
         element = e;
         this.suivant = suivant;
     }
 
-     Object getElement() {
+    public Object getElement() {
         return element;
     }
 
-     void setElement(Object element) {
+    public void setElement(Object element) {
         this.element = element;
     }
 
-     Noeud getSuivant() {
+    public Noeud getSuivant() {
         return suivant;
     }
 
-     void setSuivant(Noeud suivant) {
+    public void setSuivant(Noeud suivant) {
         this.suivant = suivant;
     }
 
-     String toString() {
+    public String toString() {
         return "Noeud(" + element + ")";
     }
 }
