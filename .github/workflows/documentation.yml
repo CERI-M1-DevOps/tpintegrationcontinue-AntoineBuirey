@@ -1,0 +1,18 @@
+name: Generate Documentation
+
+# only on merged pr
+on:
+    pull_request:
+        types: [closed]
+
+jobs:
+    generate-docs:
+        runs-on: ubuntu-latest
+
+        steps:
+            - run: mvn -B javadoc::javadoc
+
+            - uses: peaceiris/actions-gh-pages@v4
+              with:
+                 github_token: ${{ secrets.GITHUB_TOKEN }}
+                 publish_dir: ./public
