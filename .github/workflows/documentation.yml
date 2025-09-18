@@ -31,7 +31,7 @@ jobs:
 
             - run: mvn -B javadoc::javadoc
 
-            - run: mv ./target/site/apidocs ./public
+            - run: ls -laR .
 
             - uses: peaceiris/actions-gh-pages@v4
               with:
