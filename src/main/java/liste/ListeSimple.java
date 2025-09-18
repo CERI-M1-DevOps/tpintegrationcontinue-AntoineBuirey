@@ -4,6 +4,11 @@ package liste;
     private long size;
     Noeud tete;
 
+    /**
+     * Returns the number of elements currently in the list.
+     *
+     * @return the size of the list as a long value
+     */
     public long getSize() {
         return size;
     }
