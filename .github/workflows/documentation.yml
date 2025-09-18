@@ -29,7 +29,9 @@ jobs:
                   distribution: 'corretto'
                   java-version: '21'
 
-            - run: mvn -B javadoc::javadoc -d ./public
+            - run: mvn -B javadoc::javadoc
+
+            - run: mv ./target/site/apidocs ./public
 
             - uses: peaceiris/actions-gh-pages@v4
               with:
