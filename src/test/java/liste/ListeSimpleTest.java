@@ -249,4 +249,15 @@ import static org.junit.jupiter.api.Assertions.*;
         System.out.println(listeATester);
     assertEquals("ListeSimple(Noeud(4), Noeud(2), Noeud(3), Noeud(1), Noeud(5))", listeATester.toString());
     }
+
+    @Test
+    void echangerLeMemeNoeud() {
+        listeATester.ajout(3);
+        listeATester.ajout(2);
+        Noeud r1 = listeATester.tete;
+        listeATester.ajout(1);
+    assertEquals("ListeSimple(Noeud(1), Noeud(2), Noeud(3))", listeATester.toString());
+        listeATester.echanger(r1, r1);
+    assertEquals("ListeSimple(Noeud(1), Noeud(2), Noeud(3))", listeATester.toString());
+    }
 }
